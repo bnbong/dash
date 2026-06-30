@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  # main 브랜치에 푸시될 때마다 배포
+  push:
+    branches: [main]
+  # Actions 탭에서 수동 실행 허용
+  workflow_dispatch:
+
+# Pages 배포에 필요한 권한
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 동시에 한 번의 배포만 진행 (중간 실행은 취소)
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare site
+        run: |
+          mkdir -p _site
+          # 데모 HTML을 루트 index.html 로 복사 (공백 포함 파일명 처리)
+          cp "Dash App Demo.html" _site/index.html
+          # Jekyll 처리를 건너뛰도록 .nojekyll 추가
+          touch _site/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
