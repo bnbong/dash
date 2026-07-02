@@ -1,0 +1,84 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Forms & Actions" subtitle="Buttons, fields, toggles, segmented control" -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--canvas); padding: 28px; }
+  .wrap { display: flex; flex-direction: column; gap: 26px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .col { display: flex; flex-direction: column; gap: 10px; max-width: 300px; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Input, Textarea, Switch, Checkbox, SegmentedControl } = window.DashDesignSystem_ae03e4;
+const Ic = ({ n }) => <i data-lucide={n}></i>;
+
+function Demo() {
+  return (
+    <div className="wrap">
+      <div className="group">
+        <span className="lbl">Buttons</span>
+        <div className="row">
+          <Button variant="primary">기록 저장</Button>
+          <Button variant="accent" iconLeft={<Ic n="plus" />}>오늘 기록</Button>
+          <Button variant="secondary">나중에</Button>
+          <Button variant="quiet">건너뛰기</Button>
+          <Button variant="ghost">취소</Button>
+          <Button variant="primary" disabled>비활성</Button>
+        </div>
+        <div className="row">
+          <Button size="sm" variant="secondary">Small</Button>
+          <Button size="md" variant="secondary">Medium</Button>
+          <Button size="lg" variant="primary">Large 시작하기</Button>
+          <IconButton icon={<Ic n="settings" />} label="설정" variant="ghost" />
+          <IconButton icon={<Ic n="bell" />} label="알림" variant="soft" />
+          <IconButton icon={<Ic n="plus" />} label="추가" variant="solid" round />
+        </div>
+      </div>
+
+      <div className="row" style={{ alignItems: 'flex-start', gap: 20 }}>
+        <div className="col">
+          <span className="lbl">Fields</span>
+          <Input label="닉네임" placeholder="Grove 인증서 표시명" defaultValue="Jiwon" />
+          <Input label="이메일" type="email" iconLeft={<Ic n="mail" />} error="형식이 올바르지 않아요" defaultValue="jiwon@" />
+        </div>
+        <div className="col">
+          <span className="lbl">Today entry</span>
+          <Textarea label="오늘의 기록" rows={3} defaultValue="방 청소함, 친구 생일 챙김, 20분 걸음" />
+        </div>
+      </div>
+
+      <div className="row" style={{ gap: 28, alignItems: 'flex-start' }}>
+        <div className="group">
+          <span className="lbl">Toggles</span>
+          <Switch label="실명으로 인증서 발급" defaultChecked />
+          <Switch label="저에너지 모드" />
+          <Checkbox label="개인정보 처리방침에 동의" defaultChecked />
+          <Checkbox label="마케팅 알림 받기" />
+        </div>
+        <div className="group">
+          <span className="lbl">Segmented</span>
+          <SegmentedControl defaultValue="week" options={[{label:'주간',value:'week'},{label:'월간',value:'month'},{label:'연간',value:'year'}]} />
+          <SegmentedControl defaultValue="line" options={[{label:'한 줄',value:'line',icon:<Ic n="pen-line" />},{label:'음성',value:'voice',icon:<Ic n="mic" />},{label:'사진',value:'photo',icon:<Ic n="image" />}]} />
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+setTimeout(() => window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

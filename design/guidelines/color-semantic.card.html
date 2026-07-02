@@ -1,0 +1,32 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Semantic — Status" subtitle="Calm status language · never alarming red" -->
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--canvas);padding:20px;font-family:var(--font-sans)}
+  .row{display:flex;gap:10px}
+  .col{flex:1;display:flex;flex-direction:column;gap:6px}
+  .chip{display:flex;align-items:center;gap:7px;padding:9px 11px;border-radius:var(--radius-sm)}
+  .dot{width:8px;height:8px;border-radius:50%}
+  .t{font-size:12.5px;font-weight:600}
+  .h{font-family:var(--font-mono);font-size:9.5px;opacity:.85}
+</style></head>
+<body>
+<div class="row">
+  <div class="col">
+    <div class="chip" style="background:var(--positive-100)"><span class="dot" style="background:var(--positive-600)"></span><span class="t" style="color:var(--positive-600)">안정적 · Positive</span></div>
+    <div class="h" style="color:var(--text-faint);padding-left:11px">#2E6B53 on #DCEDE3</div>
+  </div>
+  <div class="col">
+    <div class="chip" style="background:var(--attention-100)"><span class="dot" style="background:var(--attention-600)"></span><span class="t" style="color:var(--attention-600)">회복 필요 · Attention</span></div>
+    <div class="h" style="color:var(--text-faint);padding-left:11px">#B96A26 on #F6E6CF</div>
+  </div>
+  <div class="col">
+    <div class="chip" style="background:var(--caution-100)"><span class="dot" style="background:var(--caution-600)"></span><span class="t" style="color:var(--caution-600)">과부하 · Caution</span></div>
+    <div class="h" style="color:var(--text-faint);padding-left:11px">#A8503C on #F2DCD3</div>
+  </div>
+  <div class="col">
+    <div class="chip" style="background:var(--calm-100)"><span class="dot" style="background:var(--calm-600)"></span><span class="t" style="color:var(--calm-600)">유지 중 · Calm</span></div>
+    <div class="h" style="color:var(--text-faint);padding-left:11px">#4C6E78 on #DCE7E9</div>
+  </div>
+</div>
+</body></html>

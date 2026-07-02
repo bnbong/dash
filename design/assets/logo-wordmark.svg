@@ -1,0 +1,6 @@
+<svg width="178" height="48" viewBox="0 0 178 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dash">
+  <rect x="3" y="31.5" width="13" height="5" rx="2.5" fill="#C97F33"></rect>
+  <rect x="13.5" y="22.5" width="13" height="5" rx="2.5" fill="#2E6B53"></rect>
+  <rect x="24" y="13.5" width="13" height="5" rx="2.5" fill="#1F4D3D"></rect>
+  <text x="48" y="33" font-family="&#39;Pretendard Variable&#39;,&#39;Pretendard&#39;,system-ui,sans-serif" font-size="30" font-weight="620" letter-spacing="-0.02em" fill="#1E2620">Dash</text>
+</svg>

@@ -1,0 +1,103 @@
+<!-- @dsCard group="Onboarding" viewport="402x800" name="Onboarding & Signup" subtitle="8-step interactive flow — welcome → value → first record → account" -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dash — Onboarding</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--paper-100); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .phone { width: 402px; height: 800px; background: var(--canvas); border-radius: 40px; border: 1px solid var(--line-strong); box-shadow: var(--shadow-pop); overflow: hidden; display: flex; flex-direction: column; position: relative; }
+  .statusbar { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; flex-shrink: 0; }
+  .statusbar .time { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--text-strong); }
+  .topbar { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; flex-shrink: 0; }
+  .body { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 4px 22px 8px; }
+  .body::-webkit-scrollbar { width: 0; }
+  .footer { padding: 14px 22px 26px; flex-shrink: 0; }
+  .skip { border: none; background: none; font-family: var(--font-sans); font-size: 13.5px; font-weight: 500; color: var(--text-muted); cursor: pointer; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="Onboarding.jsx"></script>
+<script type="text/babel">
+const D = window.DashDesignSystem_ae03e4;
+const { Button, IconButton, ProgressBar } = D;
+
+function Flow() {
+  const O = window.OB;
+  const [step, setStep] = React.useState(0);
+  const [entry, setEntry] = React.useState('');
+  const [nickname, setNickname] = React.useState('Jiwon');
+  const [realName, setRealName] = React.useState(false);
+  const [agree, setAgree] = React.useState(false);
+  const [marketing, setMarketing] = React.useState(true);
+  const bodyRef = React.useRef(null);
+
+  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); });
+  React.useEffect(() => { if (bodyRef.current) bodyRef.current.scrollTop = 0; }, [step]);
+
+  const TOTAL = 9;
+  const go = (n) => setStep(Math.max(0, Math.min(TOTAL - 1, n)));
+  const next = () => go(step + 1);
+
+  const bodies = {
+    0: <O.Welcome next={next} />,
+    1: <O.ValueProblem />,
+    2: <O.ValueDashboard />,
+    3: <O.ValueFlourish />,
+    4: <O.ValueGrove />,
+    5: <O.FirstRecord value={entry} setValue={setEntry} />,
+    6: <O.Interpretation entry={entry} />,
+    7: <O.Account nickname={nickname} setNickname={setNickname} realName={realName} setRealName={setRealName} agree={agree} setAgree={setAgree} marketing={marketing} setMarketing={setMarketing} />,
+    8: <O.Done nickname={nickname} />,
+  };
+
+  // footer action per step
+  let footer = null;
+  if (step >= 1 && step <= 4) footer = <Button variant="primary" size="lg" fullWidth onClick={next}>다음</Button>;
+  if (step === 5) footer = <Button variant="primary" size="lg" fullWidth disabled={!entry.trim()} onClick={next}>해석 보기</Button>;
+  if (step === 6) footer = <Button variant="primary" size="lg" fullWidth onClick={next}>계속</Button>;
+  if (step === 7) footer = <Button variant="primary" size="lg" fullWidth disabled={!agree} onClick={next}>동의하고 시작하기</Button>;
+  if (step === 8) footer = <Button variant="accent" size="lg" fullWidth iconRight={<O.OIcon name="arrow-right" size={18} />} onClick={() => { window.location.href = '../app/index.html'; }}>Dash 시작하기</Button>;
+
+  const showBack = step >= 1 && step <= 7;
+  const showSkip = step >= 1 && step <= 4;
+  const showProgress = step >= 1 && step <= 7;
+
+  return (
+    <div className="phone">
+      <div className="statusbar">
+        <span className="time">9:41</span>
+        <span style={{ display: 'flex', gap: 6, color: 'var(--text-strong)' }}>
+          <O.OIcon name="signal" size={16} /><O.OIcon name="wifi" size={16} /><O.OIcon name="battery-full" size={16} />
+        </span>
+      </div>
+      <div className="topbar">
+        {showBack
+          ? <IconButton icon={<O.OIcon name="chevron-left" size={20} />} label="뒤로" onClick={() => go(step - 1)} />
+          : <span style={{ width: 40 }} />}
+        {showProgress && (
+          <div style={{ flex: 1, padding: '0 14px' }}>
+            <ProgressBar value={step} max={7} height={5} />
+          </div>
+        )}
+        {showSkip
+          ? <button className="skip" onClick={() => go(5)}>건너뛰기</button>
+          : <span style={{ width: 40 }} />}
+      </div>
+      <div className="body" ref={bodyRef}>{bodies[step]}</div>
+      {footer && <div className="footer">{footer}</div>}
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Flow />);
+</script>
+</body>
+</html>

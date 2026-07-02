@@ -1,0 +1,42 @@
+/* ============================================================
+   Dash — Typography tokens
+   Pretendard (sans/UI) · Newsreader (serif/voice) · IBM Plex Mono (data)
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Newsreader', 'Noto Serif KR', 'Iowan Old Style', 'Apple Garamond', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+
+  /* ---- Weights (Pretendard variable) ---- */
+  --weight-regular: 420;
+  --weight-medium: 520;
+  --weight-semibold: 620;
+  --weight-bold: 720;
+
+  /* ---- Type scale (px) — calm, generous ---- */
+  --text-display: 40px;   /* hero / report titles    */
+  --text-title-1: 30px;
+  --text-title-2: 24px;
+  --text-title-3: 20px;
+  --text-body-lg: 17px;
+  --text-base:    15px;   /* default UI body         */
+  --text-sm:      13.5px;
+  --text-xs:      12px;
+  --text-2xs:     11px;   /* labels / mono captions  */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.18;
+  --leading-snug: 1.32;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.66;   /* interpretive serif paragraphs */
+
+  /* ---- Letter spacing ---- */
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.04em;
+  --tracking-caps: 0.14em;   /* mono eyebrows / section labels */
+}

@@ -1,0 +1,111 @@
+/* Dash landing — marketing layout on top of the design tokens. */
+
+.l-container { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+
+/* Nav */
+.l-nav { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--canvas) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.l-nav-inner { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.l-nav-links { display: flex; align-items: center; gap: 28px; }
+.l-nav-links a { font-size: 15px; font-weight: 500; color: var(--text-body); }
+.l-nav-links a:hover { color: var(--text-strong); }
+
+/* Hero */
+.l-hero { padding: 72px 0 88px; overflow: hidden; }
+.l-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+.l-h1 { font-family: var(--font-serif); font-size: 54px; line-height: 1.14; letter-spacing: -0.025em; color: var(--text-strong); font-weight: 500; margin: 20px 0 22px; }
+.l-lead { font-size: 18px; line-height: 1.66; color: var(--text-muted); max-width: 520px; margin-bottom: 30px; }
+.l-signup-inline { display: flex; gap: 10px; max-width: 460px; }
+.l-signup-inline input { flex: 1; min-width: 0; height: 52px; padding: 0 18px; font-family: var(--font-sans); font-size: 16px; color: var(--text-strong); background: var(--surface); border: 1px solid var(--field-border); border-radius: var(--radius-md); outline: none; transition: border-color var(--dur-fast), box-shadow var(--dur-fast); }
+.l-signup-inline input:focus { border-color: var(--pine-500); box-shadow: 0 0 0 3px var(--focus-ring); }
+.l-hero-meta { display: flex; gap: 22px; margin-top: 20px; flex-wrap: wrap; }
+.l-hero-meta span { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-muted); }
+
+/* Phone mock */
+.l-hero-phone-wrap { display: flex; justify-content: center; }
+.l-phone { width: 320px; background: var(--pine-950); border-radius: 42px; padding: 12px; box-shadow: var(--shadow-pop); position: relative; }
+.l-phone-notch { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 108px; height: 26px; background: var(--pine-950); border-radius: var(--radius-pill); z-index: 2; }
+.l-phone-screen { background: var(--canvas); border-radius: 32px; padding: 40px 16px 22px; display: flex; flex-direction: column; gap: 12px; }
+.l-phone-head { display: flex; align-items: center; justify-content: space-between; }
+.l-phone-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
+.l-phone-title { font-size: 22px; font-weight: 620; letter-spacing: -0.02em; color: var(--text-strong); }
+.l-phone-domains { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.l-phone-grove { background: var(--surface-inverse); border-radius: var(--radius-md); padding: 14px; }
+
+/* Sections */
+.l-section { padding: 84px 0; }
+.l-section-tint { background: var(--brand-tint); }
+.l-section-dark { background: var(--surface-inverse); }
+.l-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ochre-600); margin-bottom: 16px; }
+.l-h2 { font-family: var(--font-serif); font-size: 38px; line-height: 1.3; letter-spacing: -0.02em; color: var(--text-strong); font-weight: 500; }
+.l-section-lead { font-size: 17px; line-height: 1.66; color: var(--text-muted); max-width: 560px; margin-top: 16px; }
+
+/* Problem */
+.l-problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+.l-problem-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm); }
+.l-problem-card h3 { font-size: 18px; font-weight: 620; color: var(--text-strong); margin-bottom: 10px; }
+.l-problem-card p { font-size: 15px; line-height: 1.6; color: var(--text-muted); }
+
+/* How */
+.l-how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+.l-how-card { background: var(--surface); border: 1px solid var(--pine-100); border-radius: var(--radius-lg); padding: 28px; }
+.l-how-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.l-how-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--pine-50); }
+.l-how-num { font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em; color: var(--ochre-500); }
+.l-how-card h3 { font-size: 20px; font-weight: 620; color: var(--text-strong); margin-bottom: 10px; }
+.l-how-card p { font-size: 15px; line-height: 1.62; color: var(--text-muted); }
+
+/* Dashboard domains */
+.l-domain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 44px; }
+
+/* Grove */
+.l-grove-grid { display: grid; grid-template-columns: 1fr 0.85fr; gap: 56px; align-items: center; }
+.l-grove-stats { display: flex; gap: 40px; margin-top: 32px; }
+.l-grove-card { background: var(--pine-950); border: 1px solid var(--pine-800); border-radius: var(--radius-xl); padding: 28px; box-shadow: var(--shadow-pop); }
+
+/* Pricing */
+.l-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; align-items: stretch; }
+.l-price-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 30px 26px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+.l-price-featured { border-color: var(--ochre-300); box-shadow: var(--shadow-lg); }
+.l-price-flag { position: absolute; top: -12px; left: 26px; }
+.l-price-name { font-size: 15px; font-weight: 620; color: var(--text-strong); letter-spacing: -0.01em; }
+.l-price-amount { display: flex; align-items: baseline; gap: 4px; margin: 14px 0 6px; }
+.l-price-num { font-family: var(--font-mono); font-size: 34px; font-weight: 500; color: var(--text-strong); letter-spacing: -0.02em; }
+.l-price-unit { font-size: 15px; color: var(--text-muted); }
+.l-price-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+.l-price-feats { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+.l-price-feats li { display: flex; align-items: center; gap: 9px; font-size: 14.5px; color: var(--text-body); }
+.l-fineprint { font-size: 13px; color: var(--text-faint); margin-top: 26px; text-align: center; }
+
+/* Signup */
+.l-signup { background: radial-gradient(120% 130% at 50% 0%, var(--pine-800), var(--pine-950)); padding: 88px 0; }
+.l-signup-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+.l-signup-inner .l-h2, .l-signup-inner .l-section-lead { width: 100%; }
+.l-signup-inline-dark input { background: rgba(255,255,255,0.96); border-color: transparent; }
+.l-social-proof { font-size: 14px; color: var(--pine-200); margin-top: 4px; }
+.l-social-proof strong { color: #fff; font-weight: 600; }
+
+/* Footer */
+.l-footer { background: var(--canvas); border-top: 1px solid var(--line); padding: 40px 0; }
+.l-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.l-footer-links { display: flex; gap: 24px; }
+.l-footer-links a { font-size: 14px; color: var(--text-muted); }
+.l-footer-links a:hover { color: var(--text-strong); }
+.l-footer-copy { font-size: 13px; color: var(--text-faint); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .l-hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .l-hero-phone-wrap { order: -1; }
+  .l-h1 { font-size: 42px; }
+  .l-grove-grid { grid-template-columns: 1fr; gap: 36px; }
+  .l-problem-grid, .l-how-grid, .l-pricing-grid { grid-template-columns: 1fr; }
+  .l-domain-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .l-container { padding: 0 20px; }
+  .l-nav-links a { display: none; }
+  .l-h1 { font-size: 34px; }
+  .l-h2 { font-size: 30px; }
+  .l-signup-inline { flex-direction: column; }
+  .l-section { padding: 60px 0; }
+}

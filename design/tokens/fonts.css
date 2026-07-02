@@ -1,0 +1,18 @@
+/* ============================================================
+   Dash — Webfonts
+   - Pretendard : Korean + Latin UI workhorse (variable)
+   - Newsreader : editorial / interpretive "voice" serif
+   - IBM Plex Mono : metrics, Seed counts, data labels
+   Newsreader & IBM Plex Mono are pulled from Google Fonts;
+   Pretendard is declared directly against its CDN binary.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Noto+Serif+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+}

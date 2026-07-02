@@ -1,0 +1,56 @@
+/* ============================================================
+   Dash — Spacing, radius, elevation, motion
+   4px base grid. Calm, low elevation, warm shadows.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing (4px base) ---- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+
+  /* ---- Radius — soft but grounded, never bubbly ---- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;    /* default card / field */
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 30px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation — warm, soft, low. Greenish ambient tint. ---- */
+  --shadow-xs: 0 1px 2px rgba(30, 38, 32, 0.05);
+  --shadow-sm: 0 1px 2px rgba(30, 38, 32, 0.05),
+               0 2px 6px rgba(30, 38, 32, 0.05);
+  --shadow-md: 0 2px 4px rgba(30, 38, 32, 0.05),
+               0 8px 20px rgba(30, 38, 32, 0.07);
+  --shadow-lg: 0 4px 10px rgba(30, 38, 32, 0.06),
+               0 18px 44px rgba(30, 38, 32, 0.10);
+  --shadow-pop: 0 8px 18px rgba(20, 52, 42, 0.10),
+                0 28px 60px rgba(20, 52, 42, 0.16);
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+  --border-hairline: 1px solid var(--line);
+
+  /* ---- Motion — gentle, no bounce ---- */
+  --ease-standard: cubic-bezier(0.32, 0.08, 0.24, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 0.84, 0.34, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --dur-slow: 360ms; /* @kind other */
+
+  /* ---- Layout ---- */
+  --app-max-width: 440px;     /* mobile-first product frame */
+  --tabbar-height: 64px;
+  --header-height: 56px;
+}

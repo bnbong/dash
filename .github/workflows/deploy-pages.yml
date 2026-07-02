@@ -34,8 +34,11 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          # 데모 HTML을 루트 index.html 로 복사 (공백 포함 파일명 처리)
-          cp "Dash App Demo.html" _site/index.html
+          # 허브 페이지 + 디자인 시스템 전체 (랜딩·온보딩·앱·덱 UI 킷 포함)
+          cp index.html _site/index.html
+          cp -R design _site/design
+          # 셀프컨테인드 단일 파일 데모
+          cp demo.html _site/demo.html
           # Jekyll 처리를 건너뛰도록 .nojekyll 추가
           touch _site/.nojekyll
 

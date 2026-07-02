@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Dash App Screen" description="Phone-framed Dash screen composed from the design-system components — header, interpretation, domains, Grove, tab bar." -->
+<helmet>
+  <script src="./ds-base.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    body { margin: 0; background: #F3EFE6; }
+    *::-webkit-scrollbar { width: 0; }
+  </style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;font-family:var(--font-sans);">
+  <div style="width:402px;height:800px;background:var(--canvas);border-radius:40px;border:1px solid var(--line-strong);box-shadow:var(--shadow-pop);overflow:hidden;display:flex;flex-direction:column;">
+    <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-shrink:0;">
+      <span style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text-strong);">9:41</span>
+      <span style="display:flex;gap:6px;color:var(--text-strong);">
+        <i data-lucide="signal" style="width:16px;height:16px;"></i>
+        <i data-lucide="wifi" style="width:16px;height:16px;"></i>
+        <i data-lucide="battery-full" style="width:16px;height:16px;"></i>
+      </span>
+    </div>
+
+    <div style="flex:1;overflow-y:auto;padding:4px 18px 24px;display:flex;flex-direction:column;gap:18px;">
+      <x-import component-from-global-scope="DashDesignSystem_ae03e4.AppHeader" large="{{ isLarge }}" eyebrow="6월 30일 화요일" title="오늘" hint-size="100%,72px"></x-import>
+
+      <p style="font-family:var(--font-sans);font-weight:460;font-size:19px;line-height:1.6;letter-spacing:-0.01em;color:var(--text-strong);margin:0 2px;">오늘은 생활 기반을 회복하기 좋은 날입니다.</p>
+
+      <x-import component-from-global-scope="DashDesignSystem_ae03e4.InterpretationCard" seed="{{ seedOne }}" hint-size="100%,150px">오늘은 공간과 생활 기반을 회복한 날입니다. 방 청소와 공과금 납부는 작은 행동이지만, 앞으로의 생활 마찰을 줄이는 운영 행동입니다.</x-import>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <sc-for list="{{ domains }}" as="d" hint-placeholder-count="4">
+          <x-import component-from-global-scope="DashDesignSystem_ae03e4.DomainCard" domain="{{ d.domain }}" status="{{ d.status }}" compact="{{ isCompact }}" hint-size="100%,90px"></x-import>
+        </sc-for>
+      </div>
+
+      <div style="padding:16px;background:var(--surface-inverse);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pine-300);">Dash Grove</span>
+          <span style="font-family:var(--font-mono);font-size:13px;color:var(--ochre-300);font-weight:600;">18 Seed</span>
+        </div>
+        <x-import component-from-global-scope="DashDesignSystem_ae03e4.GroveMeter" grown="{{ grown }}" total="{{ total }}" pct="{{ pct }}" hint-size="100%,120px"></x-import>
+      </div>
+    </div>
+
+    <x-import component-from-global-scope="DashDesignSystem_ae03e4.TabBar" items="{{ tabItems }}" active="today" hint-size="100%,64px"></x-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const icon = (name) => React.createElement('i', { 'data-lucide': name, style: { width: 22, height: 22, display: 'inline-flex' } });
+    return {
+      isLarge: true,
+      isCompact: true,
+      seedOne: 1,
+      grown: 3,
+      total: 8,
+      pct: 74,
+      domains: [
+        { domain: 'body', status: 'recover' },
+        { domain: 'space', status: 'stable' },
+        { domain: 'hobby', status: 'active' },
+        { domain: 'mind', status: 'overload' },
+      ],
+      tabItems: [
+        { key: 'today', label: 'Today', icon: icon('pen-line') },
+        { key: 'dash', label: 'Dashboard', icon: icon('layout-grid') },
+        { key: 'evidence', label: 'Evidence', icon: icon('scroll-text') },
+        { key: 'grove', label: 'Grove', icon: icon('trees') },
+        { key: 'report', label: 'Report', icon: icon('line-chart') },
+      ],
+    };
+  }
+  componentDidMount() {
+    const run = () => window.lucide && window.lucide.createIcons();
+    [120, 450, 1000].forEach((t) => setTimeout(run, t));
+  }
+}
+</script>
+</body>
+</html>

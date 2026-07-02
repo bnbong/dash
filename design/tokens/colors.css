@@ -1,0 +1,108 @@
+/* ============================================================
+   Dash — Color tokens
+   Warm-paper neutrals · Pine evergreen (the Grove) ·
+   Ochre momentum (the "dash") · 8 muted earthy life domains.
+   Base scales first, then semantic aliases.
+   ============================================================ */
+
+:root {
+  /* ---- Brand · Pine / Evergreen (Grove, growth, restoration) ---- */
+  --pine-950: #0F2A21;
+  --pine-900: #14342A;
+  --pine-800: #1A4234;
+  --pine-700: #1F4D3D;   /* primary brand */
+  --pine-600: #28604C;
+  --pine-500: #2E6B53;
+  --pine-400: #4E8A6F;
+  --pine-300: #79AD93;
+  --pine-200: #ADCFBD;
+  --pine-100: #D7E8DE;
+  --pine-50:  #ECF4EF;
+
+  /* ---- Momentum · Ochre / Amber (the "dash", energy, focus) ---- */
+  --ochre-700: #9C551E;
+  --ochre-600: #B96A26;
+  --ochre-500: #C97F33;   /* accent */
+  --ochre-400: #DD9A4F;
+  --ochre-300: #EAB778;
+  --ochre-200: #F3D3A9;
+  --ochre-100: #F9E8D2;
+  --ochre-50:  #FCF4E8;
+
+  /* ---- Warm neutrals (paper · ink) ---- */
+  --paper-0:   #FFFEFB;   /* raised card */
+  --paper-50:  #FAF7F1;   /* app canvas */
+  --paper-100: #F3EFE6;
+  --paper-200: #E9E3D6;   /* hairline / line */
+  --paper-300: #D8D1C1;
+  --ink-900:   #1E2620;   /* primary text (green-black) */
+  --ink-800:   #2C342C;
+  --ink-700:   #3D453B;   /* strong body */
+  --ink-600:   #545B50;
+  --ink-500:   #6B7268;   /* muted text */
+  --ink-400:   #8A9085;
+  --ink-300:   #A8ADA2;   /* faint / disabled */
+  --ink-200:   #C7CABF;
+
+  /* ---- Semantic status ---- */
+  --positive-600: #2E6B53;
+  --positive-500: #3C8265;
+  --positive-100: #DCEDE3;
+  --attention-600: #B96A26;   /* "needs recovery" — warm, never alarming */
+  --attention-500: #C97F33;
+  --attention-100: #F6E6CF;
+  --caution-600:  #A8503C;    /* overload — muted clay, not red */
+  --caution-500:  #BE6048;
+  --caution-100:  #F2DCD3;
+  --calm-600:     #4C6E78;    /* info — muted teal-slate */
+  --calm-500:     #5E838D;
+  --calm-100:     #DCE7E9;
+
+  /* ---- Life domains (muted earthen, one tone each) ---- */
+  --domain-body:        #C16B53;   /* clay      */
+  --domain-body-soft:   #F3E0D8;
+  --domain-space:       #5E8A78;   /* sage      */
+  --domain-space-soft:  #DCE9E2;
+  --domain-relation:    #BE7089;   /* dusty rose*/
+  --domain-relation-soft:#F2E0E6;
+  --domain-work:        #5E6E8C;   /* denim     */
+  --domain-work-soft:   #DEE2EC;
+  --domain-hobby:       #C2922F;   /* gold      */
+  --domain-hobby-soft:  #F2E8CE;
+  --domain-mind:        #8A6E9B;   /* plum      */
+  --domain-mind-soft:   #E8DFEF;
+  --domain-admin:       #8A8475;   /* taupe     */
+  --domain-admin-soft:  #E8E4DA;
+  --domain-impact:      #2E6B53;   /* pine — ties to Grove */
+  --domain-impact-soft: #DCEDE3;
+
+  /* ============================================================
+     Semantic aliases — reference these in product code
+     ============================================================ */
+  --brand:            var(--pine-700);
+  --brand-strong:     var(--pine-800);
+  --brand-soft:       var(--pine-100);
+  --brand-tint:       var(--pine-50);
+  --accent:           var(--ochre-500);
+  --accent-strong:    var(--ochre-600);
+  --accent-soft:      var(--ochre-100);
+
+  --canvas:           var(--paper-50);
+  --surface:          var(--paper-0);
+  --surface-sunken:   var(--paper-100);
+  --surface-inverse:  var(--pine-900);
+
+  --text-strong:      var(--ink-900);
+  --text-body:        var(--ink-700);
+  --text-muted:       var(--ink-500);
+  --text-faint:       var(--ink-300);
+  --text-on-brand:    #F4F9F5;
+  --text-on-accent:   #FFFFFF;
+
+  --line:             var(--paper-200);
+  --line-strong:      var(--paper-300);
+  --field-bg:         var(--paper-0);
+  --field-border:     var(--paper-300);
+
+  --focus-ring:       color-mix(in oklch, var(--pine-500) 45%, transparent);
+}

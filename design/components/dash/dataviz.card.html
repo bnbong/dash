@@ -1,0 +1,56 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Dash — Data Viz" subtitle="RingGauge, ActivityChart, WeekStrip" -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--canvas); padding: 28px; }
+  .grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 16px; align-items: start; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; }
+  .card.dark { background: var(--surface-inverse); }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 14px; display: block; }
+  .lbl.on-dark { color: var(--pine-300); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { RingGauge, ActivityChart, WeekStrip } = window.DashDesignSystem_ae03e4;
+
+function Demo() {
+  return (
+    <div>
+      <div className="grid" style={{ marginBottom: 16 }}>
+        <div className="card dark" style={{ display: 'flex', justifyContent: 'center' }}>
+          <RingGauge value={72} max={100} size={132} centerValue={72} centerColor="#EFF5F0" label="운영 균형" color="var(--pine-300)" track="rgba(255,255,255,0.10)" />
+        </div>
+        <div className="card">
+          <span className="lbl">ActivityChart · 영역별 활동</span>
+          <ActivityChart max={5} items={[
+            { domain: 'space', value: 5 }, { domain: 'hobby', value: 4 },
+            { domain: 'work', value: 3 }, { domain: 'relation', value: 2 },
+            { domain: 'body', value: 1 }, { domain: 'mind', value: 1 },
+          ]} />
+        </div>
+      </div>
+      <div className="card">
+        <span className="lbl">WeekStrip · 최근 7일 기록</span>
+        <WeekStrip max={4} height={56} days={[
+          { label: '월', level: 2 }, { label: '화', level: 3 }, { label: '수', level: 1 },
+          { label: '목', level: 4 }, { label: '금', level: 3 }, { label: '토', level: 1 },
+          { label: '일', level: 2, today: true },
+        ]} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Dash — Product" subtitle="DomainCard, SeedBadge, EvidenceItem, GroveMeter, InterpretationCard" -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--canvas); padding: 28px; }
+  .wrap { display: flex; flex-direction: column; gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 16px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { DomainCard, SeedBadge, EvidenceItem, GroveMeter, InterpretationCard } = window.DashDesignSystem_ae03e4;
+const Ic = ({ n }) => <i data-lucide={n}></i>;
+
+function Demo() {
+  return (
+    <div className="wrap">
+      <InterpretationCard seed={1}>
+        오늘은 공간과 생활 기반을 회복한 날입니다. 방 청소와 공과금 납부는 당장 눈에 띄는
+        성취는 아니지만, 앞으로의 생활 마찰을 줄이는 운영 행동입니다.
+      </InterpretationCard>
+
+      <div className="lbl">DomainCard · 8 life domains</div>
+      <div className="grid">
+        <DomainCard domain="body" status="recover" icon={<Ic n="heart-pulse" />} note="수면·운동 기록이 부족해요" />
+        <DomainCard domain="space" status="stable" icon={<Ic n="home" />} note="공간 관리 행동이 있었어요" />
+        <DomainCard domain="hobby" status="active" icon={<Ic n="music" />} count={3} note="취미 활동이 반복돼요" />
+      </div>
+
+      <div className="two">
+        <div className="card">
+          <div className="lbl" style={{ marginBottom: 12 }}>GroveMeter</div>
+          <GroveMeter grown={3} total={8} pct={74} seedCount={18} caption="Community Grove 전환까지 74%" />
+        </div>
+        <div className="card">
+          <div className="lbl" style={{ marginBottom: 10 }}>SeedBadge · EvidenceItem</div>
+          <div className="row" style={{ marginBottom: 10 }}>
+            <SeedBadge count={18} label="이번 달" />
+            <SeedBadge count="+1" variant="solid" size="sm" />
+            <SeedBadge count={420} variant="outline" />
+          </div>
+          <EvidenceItem date="7월 8일" evidence="친구에게 먼저 연락" domainColor="var(--domain-relation)" domainLabel="Relation" interpretation="관계 유지" seed={1} />
+          <EvidenceItem date="7월 5일" evidence="밴드 합주 2시간" domainColor="var(--domain-hobby)" domainLabel="Hobby" interpretation="취미 성장과 커뮤니티 유지" seed={1} />
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+setTimeout(() => window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

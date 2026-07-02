@@ -1,0 +1,87 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Display & Data" subtitle="Card, Badge, Tag, Avatar, Stat, ProgressBar, Divider" -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--canvas); padding: 28px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 8px; display: block; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Card, Badge, Tag, Avatar, Stat, ProgressBar, Divider } = window.DashDesignSystem_ae03e4;
+
+function Demo() {
+  return (
+    <div className="grid">
+      <Card>
+        <span className="lbl">Badges · status</span>
+        <div className="row">
+          <Badge tone="positive" dot>안정적</Badge>
+          <Badge tone="attention" dot>회복 필요</Badge>
+          <Badge tone="caution" dot>과부하 주의</Badge>
+          <Badge tone="calm" dot>유지 중</Badge>
+          <Badge tone="pine">Dash Plus</Badge>
+          <Badge tone="ochre">Seed +3</Badge>
+        </div>
+      </Card>
+
+      <Card>
+        <span className="lbl">Tags · filter</span>
+        <div className="row">
+          <Tag selected>전체</Tag>
+          <Tag swatch="var(--domain-body)">Body</Tag>
+          <Tag swatch="var(--domain-space)">Space</Tag>
+          <Tag swatch="var(--domain-hobby)">Hobby</Tag>
+          <Tag removable>취미</Tag>
+        </div>
+      </Card>
+
+      <Card tone="inverse">
+        <span className="lbl" style={{ color: 'var(--pine-200)' }}>Stat · data voice</span>
+        <div className="row" style={{ gap: 28 }}>
+          <Stat value="18" unit="개" label="이번 달 Seed" color="#fff" />
+          <Stat value="3" unit="그루" label="누적 기여" color="var(--ochre-300)" />
+        </div>
+      </Card>
+
+      <Card>
+        <span className="lbl">Progress</span>
+        <ProgressBar value={74} showLabel label="Community Grove 전환까지" />
+        <div style={{ height: 12 }} />
+        <ProgressBar value={3} max={5} color="var(--domain-hobby)" label="Hobby & Creation" showLabel />
+      </Card>
+
+      <Card>
+        <span className="lbl">Avatars</span>
+        <div className="row">
+          <Avatar name="Jiwon" size="lg" />
+          <Avatar name="Min Soo" size="md" />
+          <Avatar name="K" size="sm" />
+          <Avatar name="A" size="xs" />
+        </div>
+      </Card>
+
+      <Card>
+        <span className="lbl">Divider</span>
+        <div style={{ color: 'var(--text-muted)', fontSize: 14 }}>이번 주 운영 기록</div>
+        <Divider label="오늘" />
+        <div style={{ color: 'var(--text-muted)', fontSize: 14 }}>방 청소 · 친구 답장</div>
+      </Card>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Radius scale" subtitle="Soft but grounded, never bubbly" -->
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--canvas);padding:24px;font-family:var(--font-sans)}
+  .row{display:flex;gap:16px;align-items:flex-end}
+  .col{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .box{width:64px;height:64px;background:var(--surface);border:1px solid var(--line-strong);border-top:3px solid var(--pine-500)}
+  .t{font-family:var(--font-mono);font-size:10px;color:var(--text-muted)}
+</style></head>
+<body>
+<div class="row">
+  <div class="col"><div class="box" style="border-radius:6px"></div><span class="t">xs · 6</span></div>
+  <div class="col"><div class="box" style="border-radius:10px"></div><span class="t">sm · 10</span></div>
+  <div class="col"><div class="box" style="border-radius:14px"></div><span class="t">md · 14</span></div>
+  <div class="col"><div class="box" style="border-radius:18px"></div><span class="t">lg · 18</span></div>
+  <div class="col"><div class="box" style="border-radius:24px"></div><span class="t">xl · 24</span></div>
+  <div class="col"><div class="box" style="border-radius:999px"></div><span class="t">pill</span></div>
+</div>
+</body></html>

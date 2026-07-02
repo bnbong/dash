@@ -1,0 +1,203 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Pitch Deck" subtitle="Investor / partner deck — 9 slides, arrow keys to navigate" -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dash — Pitch Deck</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  deck-stage:not(:defined) { visibility: hidden; }
+  body { margin: 0; background: var(--pine-950); }
+
+  /* ---- Slide system ---- */
+  .s { font-family: var(--font-sans); color: var(--text-strong); background: var(--canvas); padding: 88px 96px; display: flex; flex-direction: column; box-sizing: border-box; }
+  .s-dark { background: var(--surface-inverse); color: #EFF5F0; }
+  .s-tint { background: var(--brand-tint); }
+  .s-grad { background: radial-gradient(120% 130% at 22% 18%, var(--pine-700), var(--pine-950)); color: #EFF5F0; }
+
+  .eyebrow { font-family: var(--font-mono); font-size: 17px; letter-spacing: .22em; text-transform: uppercase; color: var(--ochre-500); margin-bottom: 26px; }
+  .s-dark .eyebrow, .s-grad .eyebrow { color: var(--ochre-300); }
+  .title { font-family: var(--font-serif); font-weight: 500; font-size: 60px; line-height: 1.2; letter-spacing: -0.02em; }
+  .title-sm { font-family: var(--font-serif); font-weight: 500; font-size: 46px; line-height: 1.24; letter-spacing: -0.02em; }
+  .lead { font-size: 24px; line-height: 1.6; color: var(--text-muted); max-width: 900px; margin-top: 28px; }
+  .s-dark .lead, .s-grad .lead { color: var(--pine-200); }
+  .spacer { flex: 1; }
+  .mono-num { font-family: var(--font-mono); font-feature-settings: 'tnum' 1; letter-spacing: -0.01em; }
+
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 12px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
+  .card h3 { font-size: 24px; font-weight: 620; margin-bottom: 12px; }
+  .card p { font-size: 17px; line-height: 1.6; color: var(--text-muted); }
+  .card .idx { font-family: var(--font-mono); font-size: 15px; color: var(--ochre-500); letter-spacing: .1em; }
+  .icon-badge { display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--pine-50); color: var(--pine-600); margin-bottom: 22px; }
+
+  .domain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+  .d-chip { display: flex; align-items: center; gap: 12px; padding: 18px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-xs); }
+  .d-chip .sw { width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+  .d-chip .en { font-size: 17px; font-weight: 600; line-height: 1.1; }
+  .d-chip .ko { font-size: 13px; color: var(--text-faint); }
+
+  .stat-row { display: flex; gap: 64px; margin-top: 8px; }
+  .stat .n { font-family: var(--font-mono); font-size: 60px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; }
+  .stat .l { font-family: var(--font-mono); font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-top: 12px; }
+  .s-grad .stat .l, .s-dark .stat .l { color: var(--pine-200); }
+
+  .flow { display: flex; align-items: center; gap: 18px; margin-top: 36px; }
+  .flow-step { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(173,207,189,0.25); border-radius: var(--radius-lg); padding: 28px; }
+  .flow-step .k { font-family: var(--font-mono); font-size: 14px; color: var(--ochre-300); letter-spacing: .1em; margin-bottom: 14px; }
+  .flow-step h3 { font-size: 26px; font-weight: 620; color: #fff; margin-bottom: 10px; }
+  .flow-step p { font-size: 16px; line-height: 1.55; color: var(--pine-200); }
+  .flow-arrow { color: var(--pine-300); flex-shrink: 0; }
+
+  .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+  .phase { padding: 30px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--surface); }
+  .phase.now { border-color: var(--ochre-300); box-shadow: var(--shadow-md); }
+  .phase .p-k { font-family: var(--font-mono); font-size: 14px; letter-spacing: .12em; color: var(--ochre-600); text-transform: uppercase; }
+  .phase h3 { font-size: 22px; font-weight: 620; margin: 10px 0 12px; }
+  .phase p { font-size: 15.5px; line-height: 1.55; color: var(--text-muted); }
+
+  .foot { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .foot img { height: 30px; }
+  .tag-row { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: var(--radius-pill); background: rgba(255,255,255,0.08); border: 1px solid rgba(173,207,189,0.28); font-size: 16px; color: #EFF5F0; }
+  .lg { color: var(--pine-500); }
+</style>
+</head>
+<body>
+<deck-stage width="1280" height="720">
+
+  <!-- 1 · Title -->
+  <section class="s s-grad" data-label="Title" style="justify-content:center;">
+    <div class="foot" style="margin-bottom:40px;">
+      <img src="../../assets/logo-mark.svg" height="40" style="filter:brightness(0) invert(1);" />
+      <span style="font-size:34px;font-weight:620;letter-spacing:-0.02em;">Dash</span>
+    </div>
+    <div class="title" style="font-size:72px;">당신의 삶은 이미<br>운영되고 있습니다.</div>
+    <div class="lead" style="font-size:26px;">어른을 위한 생활 운영 &amp; 공익 임팩트 Dashboard</div>
+    <div class="spacer"></div>
+    <div class="mono-num" style="font-size:15px;letter-spacing:.14em;color:var(--pine-300);">INVESTOR &amp; PARTNER DECK · 2026</div>
+  </section>
+
+  <!-- 2 · Problem -->
+  <section class="s" data-label="Problem">
+    <div class="eyebrow">문제</div>
+    <div class="title-sm">생산성 앱은 넘치지만,<br>번아웃은 늘어납니다.</div>
+    <div class="cols3" style="margin-top:52px;">
+      <div class="card"><div class="idx">01</div><h3 style="margin-top:10px;">보이지 않는 노력</h3><p>밥을 하고 방을 치워도 아무 기록이 남지 않는다. 살아낸 하루가 증발한다.</p></div>
+      <div class="card"><div class="idx">02</div><h3 style="margin-top:10px;">평가하는 도구들</h3><p>스트릭·목표·랭킹은 지친 사람을 더 지치게 만든다. 죄책감이 이탈로 이어진다.</p></div>
+      <div class="card"><div class="idx">03</div><h3 style="margin-top:10px;">의미 없는 숫자</h3><p>완료한 할 일 개수는 내가 어떤 사람이 되어가는지 말해주지 않는다.</p></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="lead" style="font-size:20px;margin-top:0;">타깃: 삶을 감당하며 살아가는 25–45세 성인. 자기관리 피로와 무의미감을 동시에 느끼는 세대.</div>
+  </section>
+
+  <!-- 3 · Insight -->
+  <section class="s s-tint" data-label="Insight" style="justify-content:center;">
+    <div class="eyebrow">인사이트</div>
+    <div class="title">문제는 게으름이 아니라,<br>노력이 <span style="color:var(--pine-600);">보이지 않는</span> 것이었습니다.</div>
+    <div class="lead">Dash는 새로운 노력을 요구하지 않습니다. 이미 하고 있는 생활 운영을 발견하고, 의미로 번역하고, 세상에 대한 기여로 잇습니다.</div>
+  </section>
+
+  <!-- 4 · Solution / How -->
+  <section class="s s-grad" data-label="Solution">
+    <div class="eyebrow">솔루션</div>
+    <div class="title-sm" style="color:#fff;">기록에서 의미로,<br>의미에서 임팩트로.</div>
+    <div class="flow">
+      <div class="flow-step"><div class="k">01 · RECORD</div><h3>기록</h3><p>한 줄·음성·사진으로 오늘 한 일을 남깁니다.</p></div>
+      <span class="flow-arrow"><i data-lucide="arrow-right" style="width:28px;height:28px;"></i></span>
+      <div class="flow-step"><div class="k">02 · INTERPRET</div><h3>해석</h3><p>AI가 행동을 8개 삶의 영역으로 번역합니다.</p></div>
+      <span class="flow-arrow"><i data-lucide="arrow-right" style="width:28px;height:28px;"></i></span>
+      <div class="flow-step"><div class="k">03 · IMPACT</div><h3>임팩트</h3><p>의미 있는 운영이 Impact Seed→생태 복원으로.</p></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="lead" style="font-size:19px;">핵심 차별점: 성취가 아닌 <b style="color:#fff;">유지·회복까지 생산성으로 인정</b>하는 최초의 생활 운영 대시보드.</div>
+  </section>
+
+  <!-- 5 · Product · Life Dashboard -->
+  <section class="s" data-label="Product">
+    <div class="eyebrow">프로덕트 · Life Dashboard</div>
+    <div class="title-sm">삶을 8개의 영역으로 비춥니다.</div>
+    <div class="domain-grid">
+      <div class="d-chip"><span class="sw" style="background:var(--domain-body-soft);color:var(--domain-body);"><i data-lucide="heart-pulse" style="width:16px;height:16px;"></i></span><div><div class="en">Body</div><div class="ko">몸</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-space-soft);color:var(--domain-space);"><i data-lucide="home" style="width:16px;height:16px;"></i></span><div><div class="en">Space</div><div class="ko">공간</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-relation-soft);color:var(--domain-relation);"><i data-lucide="users" style="width:16px;height:16px;"></i></span><div><div class="en">Relation</div><div class="ko">관계</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-work-soft);color:var(--domain-work);"><i data-lucide="graduation-cap" style="width:16px;height:16px;"></i></span><div><div class="en">Work</div><div class="ko">일과 학습</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-hobby-soft);color:var(--domain-hobby);"><i data-lucide="music" style="width:16px;height:16px;"></i></span><div><div class="en">Hobby</div><div class="ko">취미와 창작</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-mind-soft);color:var(--domain-mind);"><i data-lucide="brain" style="width:16px;height:16px;"></i></span><div><div class="en">Mind</div><div class="ko">마음</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-admin-soft);color:var(--domain-admin);"><i data-lucide="receipt" style="width:16px;height:16px;"></i></span><div><div class="en">Life Admin</div><div class="ko">생활 행정</div></div></div>
+      <div class="d-chip"><span class="sw" style="background:var(--domain-impact-soft);color:var(--domain-impact);"><i data-lucide="sprout" style="width:16px;height:16px;"></i></span><div><div class="en">Impact</div><div class="ko">임팩트</div></div></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="lead" style="font-size:19px;margin-top:0;">평가가 아니라 균형의 언어로. 무엇이 쌓이고, 무엇이 회복이 필요한지 비춰줍니다.</div>
+  </section>
+
+  <!-- 6 · Dash Grove (differentiator) -->
+  <section class="s s-dark" data-label="Dash Grove">
+    <div class="cols2">
+      <div>
+        <div class="eyebrow">차별점 · Dash Grove</div>
+        <div class="title-sm" style="color:#fff;">당신의 달리기가<br>세상의 숲이 됩니다.</div>
+        <div class="lead" style="font-size:20px;">의미 있는 생활 운영이 Impact Seed로 쌓이고, 매월 검증 가능한 생태 복원 기여로 전환됩니다. 개인의 성장과 공익이 하나의 루프로 연결되는 구조입니다.</div>
+      </div>
+      <div>
+        <div class="stat-row" style="flex-direction:column;gap:36px;">
+          <div class="stat"><div class="n" style="color:#fff;">84,200</div><div class="l">이번 달 커뮤니티 Impact Seed</div></div>
+          <div class="stat"><div class="n" style="color:var(--ochre-300);">420<span style="font-size:26px;"> 그루</span></div><div class="l">식재 기여 예정</div></div>
+          <div class="stat"><div class="n" style="color:#fff;">1:1</div><div class="l">개인 성장 ↔ 공익 임팩트</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · Business model -->
+  <section class="s" data-label="Business Model">
+    <div class="eyebrow">비즈니스 모델</div>
+    <div class="title-sm">구독 + 임팩트 파트너십.</div>
+    <div class="cols3" style="margin-top:48px;">
+      <div class="card"><div class="idx">FREE</div><h3 style="margin-top:8px;">Dash Free</h3><p>핵심 기록·해석·Dash Grove 참여. 확산과 유입의 기반.</p></div>
+      <div class="card" style="border-color:var(--ochre-300);box-shadow:var(--shadow-md);"><div class="idx" style="color:var(--ochre-600);">4,900원 / 월</div><h3 style="margin-top:8px;">Dash Plus</h3><p>고급 리포트, 장기 아카이브, 개인 임팩트 리포트. 핵심 매출원.</p></div>
+      <div class="card"><div class="idx">7,900원 / 월</div><h3 style="margin-top:8px;">Dash Duo</h3><p>2인 공유 계정과 공유 Grove. 관계 기반 리텐션.</p></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="lead" style="font-size:19px;margin-top:0;">추가 축: 임팩트 예산을 매개로 한 ESG·친환경 브랜드 파트너십 및 공동 캠페인.</div>
+  </section>
+
+  <!-- 8 · Roadmap -->
+  <section class="s s-tint" data-label="Roadmap">
+    <div class="eyebrow">로드맵</div>
+    <div class="title-sm">지금은 수요 검증 단계입니다.</div>
+    <div class="roadmap">
+      <div class="phase now"><div class="p-k">Phase 0 · NOW</div><h3>수요 검증</h3><p>사전신청 랜딩, 브랜드·컨셉 검증, 초기 서포터 확보.</p></div>
+      <div class="phase"><div class="p-k">Phase 1</div><h3>MVP 출시</h3><p>기록·해석·Life Dashboard·Dash Grove 코어 루프. 첫 파트너 식재.</p></div>
+      <div class="phase"><div class="p-k">Phase 2</div><h3>확장</h3><p>구독 고도화, Duo·커뮤니티, 임팩트 파트너십 확대.</p></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="lead" style="font-size:19px;margin-top:0;">본 덱은 Phase 1 MVP 디자인이 완성된 시점 기준입니다. 브랜드·앱·랜딩·디자인 시스템 확보 완료.</div>
+  </section>
+
+  <!-- 9 · Closing / Ask -->
+  <section class="s s-grad" data-label="Closing" style="justify-content:center;">
+    <div class="foot" style="margin-bottom:34px;"><img src="../../assets/logo-mark.svg" height="34" style="filter:brightness(0) invert(1);" /><span style="font-size:26px;font-weight:620;">Dash</span></div>
+    <div class="title">삶을 운영하는 감각을,<br>함께 만들어 주세요.</div>
+    <div class="tag-row">
+      <span class="pill"><i data-lucide="users" style="width:18px;height:18px;color:var(--pine-300);"></i> 초기 사용자·서포터</span>
+      <span class="pill"><i data-lucide="handshake" style="width:18px;height:18px;color:var(--pine-300);"></i> 생태 복원 파트너</span>
+      <span class="pill"><i data-lucide="trending-up" style="width:18px;height:18px;color:var(--pine-300);"></i> 시드 투자</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="mono-num" style="font-size:16px;letter-spacing:.1em;color:var(--pine-200);">hello@dash.app · 어른을 위한 생활 운영 Dashboard</div>
+  </section>
+
+</deck-stage>
+<script src="deck-stage.js"></script>
+<script>
+  const draw = () => window.lucide && window.lucide.createIcons();
+  draw();
+  document.querySelector('deck-stage')?.addEventListener('slidechange', () => setTimeout(draw, 30));
+  [200, 600, 1200].forEach((t) => setTimeout(draw, t));
+</script>
+</body>
+</html>
