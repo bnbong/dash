@@ -53,7 +53,7 @@ function ValueDashboard() {
   ];
   return (
     <ValueLayout step="02" headline={<>생활 운영 상태를 영역별로 보여줍니다</>}
-      body="Body, Space, Relation, Hobby… 8개의 삶의 영역으로 나누어 무엇이 쌓이고 무엇이 회복이 필요한지 비춰줍니다.">
+      body="Body, Space, Relation, Hobby… 8개의 삶의 영역으로 나눠, 무엇이 쌓이고 무엇에 회복이 필요한지 비춰줍니다.">
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, width: '100%', maxWidth: 320 }}>
         {ds.map((d) => (
           <DomainCard key={d.domain} domain={d.domain} status={d.status} compact
@@ -68,7 +68,7 @@ function ValueGrove() {
   const { GroveMeter, Card } = D;
   return (
     <ValueLayout step="04" headline={<>당신의 달리기가 세상의 숲이 됩니다</>}
-      body="의미 있는 생활 운영이 Impact Seed로 쌓이고, 매월 검증 가능한 생태 복원 기여로 전환됩니다.">
+      body="의미 있는 생활 운영이 Impact Seed로 쌓이고, 매월 검증 가능한 생태 복원 기여로 이어집니다.">
       <Card tone="inverse" padding="md" style={{ width: '100%', maxWidth: 320 }}>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--pine-300)', marginBottom: 12 }}>Dash Grove</div>
         <GroveMeter grown={3} total={8} pct={74} seedCount={18} caption="Community Grove 전환까지 74%" />
@@ -81,7 +81,7 @@ function ValueFlourish() {
   const { Card, FlourishBalance } = D;
   return (
     <ValueLayout step="03" headline={<>성장하고, 즐기고, 의미를 만드는 사람</>}
-      body="Dash는 생산성만이 아니라 당신의 번영을 봅니다. 성장·즐거움·의미 — 세 축이 고루 채워질 때, 우리는 더 행복해집니다. 쉼과 놀이도 그 자체로 소중합니다.">
+      body="Dash는 생산성만이 아니라 당신의 번영을 봅니다. 성장·즐거움·의미 — 세 축이 고루 채워질 때 우리는 더 행복해집니다. 쉼과 놀이도 그 자체로 소중합니다.">
       <Card padding="md" style={{ width: '100%', maxWidth: 320 }}>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 14 }}>행복의 세 축</div>
         <FlourishBalance values={{ growth: 5, enjoyment: 4, meaning: 5 }} />
@@ -145,7 +145,7 @@ function Account({ nickname, setNickname, realName, setRealName, agree, setAgree
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--ochre-500)' }}>계정</span>
         <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: 23, lineHeight: 1.45, letterSpacing: '-0.02em', color: 'var(--text-strong)', fontWeight: 620, marginTop: 10 }}>당신을 어떻게 불러드릴까요?</h2>
       </div>
-      <Input label="닉네임" value={nickname} onChange={(e) => setNickname(e.target.value)} hint="Dash Grove 인증서에 표시됩니다. 언제든 변경할 수 있어요." />
+      <Input label="닉네임" value={nickname} onChange={(e) => setNickname(e.target.value)} hint="Dash Grove 인증서에 표시됩니다. 언제든 바꿀 수 있어요." />
       <div style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: 'var(--radius-md)', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
           <div>

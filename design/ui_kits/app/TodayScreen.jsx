@@ -80,8 +80,8 @@ function TodayScreen({ seedTotal, onRecord, go }) {
       {/* Interpretation */}
       <InterpretationCard seed={justSaved ? 1 : null} axes={justSaved ? ['growth', 'meaning'] : ['growth', 'enjoyment']}>
         {justSaved
-          ? '방금 기록한 행동은 당장 눈에 띄는 성취는 아니지만, 앞으로의 생활 마찰을 줄이는 운영 행동입니다. 오늘은 삶을 다시 정돈하기 시작한 날입니다.'
-          : '지금까지 오늘은 몸을 챙기고 공간을 정돈한 하루입니다. 작은 행동들이 내일의 흐름을 만들고 있어요.'}
+          ? '방금 기록한 행동은 당장 눈에 띄는 성취는 아니어도, 앞으로 생활이 덜 걸리게 해주는 운영 행동이에요. 오늘은 삶을 다시 정돈하기 시작한 날입니다.'
+          : '오늘은 몸을 챙기고 공간을 정돈한 하루였습니다. 작은 행동들이 내일의 흐름을 만들어요.'}
       </InterpretationCard>
 
       {/* Today's log */}

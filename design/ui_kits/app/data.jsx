@@ -18,10 +18,10 @@ function Icon({ name, size = 20, color = 'currentColor', style = {} }) {
 
 const TODAY_DOMAINS = [
   { domain: 'body', status: 'recover', note: '수면·운동 기록이 부족해요' },
-  { domain: 'space', status: 'stable', note: '최근 1주일간 공간 관리 행동이 있어요' },
+  { domain: 'space', status: 'stable', note: '최근 1주일간 공간을 관리하고 있어요' },
   { domain: 'relation', status: 'holding', note: '접점은 적지만 끊기지 않았어요' },
-  { domain: 'work', status: 'growing', note: '학습 기록이 누적되고 있어요' },
-  { domain: 'hobby', status: 'active', note: '취미 활동이 반복적으로 나타나요', count: 3 },
+  { domain: 'work', status: 'growing', note: '학습 기록이 쌓이고 있어요' },
+  { domain: 'hobby', status: 'active', note: '취미 활동이 꾸준히 이어지고 있어요', count: 3 },
   { domain: 'mind', status: 'overload', note: '피로·무기력 관련 기록이 많아요' },
   { domain: 'admin', status: 'tidy', note: '생활 행정이 정리됐어요' },
   { domain: 'impact', status: 'growing', note: '이번 달 Seed가 쌓이고 있어요', count: 18 },

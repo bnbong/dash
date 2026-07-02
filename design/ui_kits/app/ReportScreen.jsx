@@ -99,7 +99,7 @@ function ReportScreen() {
         <Icon name="compass" size={18} color="var(--ochre-600)" style={{ marginTop: 1, flexShrink: 0 }} />
         <div>
           <div style={{ fontSize: 11, fontFamily: 'var(--font-mono)', letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--ochre-700)', marginBottom: 4 }}>다음 {period === 'week' ? '주' : '달'}의 작은 제안</div>
-          <div style={{ fontSize: 14, color: 'var(--text-body)', lineHeight: 1.5 }}>수면 루틴을 한 가지만 정해보세요. Body 영역이 회복을 시작할 수 있어요.</div>
+          <div style={{ fontSize: 14, color: 'var(--text-body)', lineHeight: 1.5 }}>수면 루틴을 한 가지만 정해보세요. Body 영역이 다시 회복될 수 있어요.</div>
         </div>
       </div>
     </div>
