@@ -21,8 +21,8 @@ const { RecordReview } = window.DashDesignSystem_ae03e4;
 function Demo() {
   return (
     <div className="grid">
-      <RecordReview raw="밴드 합주 2시간" primary="hobby" secondary={['relation']} axes={['enjoyment','growth']} confidence={0.88} />
-      <RecordReview raw="그냥 좀 쉬었다" primary="mind" secondary={[]} axes={['enjoyment']} confidence={0.42} />
+      <RecordReview raw="밴드 합주 2시간" primary="hobby" secondary={['relation']} axes={['enjoyment','growth']} confidence={0.88} source="voice" voiceLength="0:31" />
+      <RecordReview raw="새 레시피로 저녁 준비" primary="hobby" secondary={[]} axes={['enjoyment']} confidence={0.9} source="photo" />
     </div>
   );
 }

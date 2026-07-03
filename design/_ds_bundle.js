@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"DashDesignSystem_ae03e4","components":[{"name":"ActivityChart","sourcePath":"components/dash/ActivityChart.jsx"},{"name":"DOMAINS","sourcePath":"components/dash/DomainCard.jsx"},{"name":"DomainCard","sourcePath":"components/dash/DomainCard.jsx"},{"name":"EvidenceItem","sourcePath":"components/dash/EvidenceItem.jsx"},{"name":"AXES","sourcePath":"components/dash/FlourishBalance.jsx"},{"name":"FlourishBalance","sourcePath":"components/dash/FlourishBalance.jsx"},{"name":"GroveMeter","sourcePath":"components/dash/GroveMeter.jsx"},{"name":"InterpretationCard","sourcePath":"components/dash/InterpretationCard.jsx"},{"name":"RecordReview","sourcePath":"components/dash/RecordReview.jsx"},{"name":"RingGauge","sourcePath":"components/dash/RingGauge.jsx"},{"name":"SeedBadge","sourcePath":"components/dash/SeedBadge.jsx"},{"name":"WeekStrip","sourcePath":"components/dash/WeekStrip.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Card","sourcePath":"components/display/Card.jsx"},{"name":"Divider","sourcePath":"components/display/Divider.jsx"},{"name":"ProgressBar","sourcePath":"components/display/ProgressBar.jsx"},{"name":"Stat","sourcePath":"components/display/Stat.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Button","sourcePath":"components/forms/Button.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"IconButton","sourcePath":"components/forms/IconButton.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"SegmentedControl","sourcePath":"components/forms/SegmentedControl.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"AppHeader","sourcePath":"components/navigation/AppHeader.jsx"},{"name":"SectionTabs","sourcePath":"components/navigation/SectionTabs.jsx"},{"name":"TabBar","sourcePath":"components/navigation/TabBar.jsx"}],"sourceHashes":{"components/dash/ActivityChart.jsx":"7e5ffcc0c5a3","components/dash/DomainCard.jsx":"b6e71660c9cc","components/dash/EvidenceItem.jsx":"38eff281f2d1","components/dash/FlourishBalance.jsx":"0a7aa0abaae4","components/dash/GroveMeter.jsx":"f100b6983c87","components/dash/InterpretationCard.jsx":"702e99ce9e20","components/dash/RecordReview.jsx":"88cd28a1f6a9","components/dash/RingGauge.jsx":"4670c8982c82","components/dash/SeedBadge.jsx":"aa98f6332c73","components/dash/WeekStrip.jsx":"6d2f7490a97a","components/display/Avatar.jsx":"d7f8977af63f","components/display/Badge.jsx":"41ed3dd154df","components/display/Card.jsx":"18a8c40742d6","components/display/Divider.jsx":"d13cd9bc87d6","components/display/ProgressBar.jsx":"a281c230d76f","components/display/Stat.jsx":"0cad9a6392e5","components/display/Tag.jsx":"c17ded2d0a9b","components/feedback/Dialog.jsx":"e612b6101c06","components/feedback/EmptyState.jsx":"37f6325c5582","components/feedback/Toast.jsx":"369bece11324","components/forms/Button.jsx":"57fa6192eb6e","components/forms/Checkbox.jsx":"df6197943362","components/forms/IconButton.jsx":"326428626475","components/forms/Input.jsx":"271bdfbafca3","components/forms/SegmentedControl.jsx":"1b0655b35fca","components/forms/Switch.jsx":"88c19a527c4d","components/forms/Textarea.jsx":"1a67c4e200e4","components/navigation/AppHeader.jsx":"9cf8b984aab1","components/navigation/SectionTabs.jsx":"278f6eadca33","components/navigation/TabBar.jsx":"818c37b32a62","ui_kits/app/DashboardScreen.jsx":"732c02675a32","ui_kits/app/EvidenceScreen.jsx":"7f2b37659c9a","ui_kits/app/GroveScreen.jsx":"8a023e36c082","ui_kits/app/ProfileScreen.jsx":"0bb7877ffd78","ui_kits/app/ReportScreen.jsx":"0c55afbd3f47","ui_kits/app/TodayScreen.jsx":"fa4eb56a46b3","ui_kits/app/data.jsx":"2d4de3937573","ui_kits/deck/deck-stage.js":"0cc26af2402a","ui_kits/landing/Landing.jsx":"aa69abf502e2","ui_kits/onboarding/Onboarding.jsx":"75940c0fc162"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"DashDesignSystem_ae03e4","components":[{"name":"ActivityChart","sourcePath":"components/dash/ActivityChart.jsx"},{"name":"DOMAINS","sourcePath":"components/dash/DomainCard.jsx"},{"name":"DomainCard","sourcePath":"components/dash/DomainCard.jsx"},{"name":"EvidenceItem","sourcePath":"components/dash/EvidenceItem.jsx"},{"name":"AXES","sourcePath":"components/dash/FlourishBalance.jsx"},{"name":"FlourishBalance","sourcePath":"components/dash/FlourishBalance.jsx"},{"name":"GroveMeter","sourcePath":"components/dash/GroveMeter.jsx"},{"name":"InterpretationCard","sourcePath":"components/dash/InterpretationCard.jsx"},{"name":"PhotoViewer","sourcePath":"components/dash/PhotoViewer.jsx"},{"name":"RecordReview","sourcePath":"components/dash/RecordReview.jsx"},{"name":"RingGauge","sourcePath":"components/dash/RingGauge.jsx"},{"name":"SeedBadge","sourcePath":"components/dash/SeedBadge.jsx"},{"name":"VoicePlayer","sourcePath":"components/dash/VoicePlayer.jsx"},{"name":"WeekStrip","sourcePath":"components/dash/WeekStrip.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Card","sourcePath":"components/display/Card.jsx"},{"name":"Divider","sourcePath":"components/display/Divider.jsx"},{"name":"ProgressBar","sourcePath":"components/display/ProgressBar.jsx"},{"name":"Stat","sourcePath":"components/display/Stat.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Button","sourcePath":"components/forms/Button.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"IconButton","sourcePath":"components/forms/IconButton.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"SegmentedControl","sourcePath":"components/forms/SegmentedControl.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"AppHeader","sourcePath":"components/navigation/AppHeader.jsx"},{"name":"SectionTabs","sourcePath":"components/navigation/SectionTabs.jsx"},{"name":"TabBar","sourcePath":"components/navigation/TabBar.jsx"}],"sourceHashes":{"components/dash/ActivityChart.jsx":"7e5ffcc0c5a3","components/dash/DomainCard.jsx":"b6e71660c9cc","components/dash/EvidenceItem.jsx":"ee50ad664573","components/dash/FlourishBalance.jsx":"0a7aa0abaae4","components/dash/GroveMeter.jsx":"f100b6983c87","components/dash/InterpretationCard.jsx":"702e99ce9e20","components/dash/PhotoViewer.jsx":"42c3f2a8aa16","components/dash/RecordReview.jsx":"f6cb0e7c5aee","components/dash/RingGauge.jsx":"4670c8982c82","components/dash/SeedBadge.jsx":"aa98f6332c73","components/dash/VoicePlayer.jsx":"455fd1fda656","components/dash/WeekStrip.jsx":"6d2f7490a97a","components/display/Avatar.jsx":"d7f8977af63f","components/display/Badge.jsx":"41ed3dd154df","components/display/Card.jsx":"18a8c40742d6","components/display/Divider.jsx":"d13cd9bc87d6","components/display/ProgressBar.jsx":"a281c230d76f","components/display/Stat.jsx":"0cad9a6392e5","components/display/Tag.jsx":"c17ded2d0a9b","components/feedback/Dialog.jsx":"e612b6101c06","components/feedback/EmptyState.jsx":"37f6325c5582","components/feedback/Toast.jsx":"369bece11324","components/forms/Button.jsx":"57fa6192eb6e","components/forms/Checkbox.jsx":"df6197943362","components/forms/IconButton.jsx":"326428626475","components/forms/Input.jsx":"271bdfbafca3","components/forms/SegmentedControl.jsx":"1b0655b35fca","components/forms/Switch.jsx":"88c19a527c4d","components/forms/Textarea.jsx":"1a67c4e200e4","components/navigation/AppHeader.jsx":"9cf8b984aab1","components/navigation/SectionTabs.jsx":"278f6eadca33","components/navigation/TabBar.jsx":"818c37b32a62","ui_kits/app/DashboardScreen.jsx":"732c02675a32","ui_kits/app/EvidenceScreen.jsx":"f06b298b34fe","ui_kits/app/GroveScreen.jsx":"8a023e36c082","ui_kits/app/ProfileScreen.jsx":"0bb7877ffd78","ui_kits/app/ReportScreen.jsx":"0c55afbd3f47","ui_kits/app/TodayScreen.jsx":"e55d1f4a3188","ui_kits/app/data.jsx":"8ac9e34500ff","ui_kits/deck/deck-stage.js":"0cc26af2402a","ui_kits/landing/Landing.jsx":"aa69abf502e2","ui_kits/onboarding/Onboarding.jsx":"75940c0fc162"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -415,9 +415,65 @@ Object.assign(__ds_scope, { ActivityChart });
 
 // components/dash/EvidenceItem.jsx
 try { (() => {
+const MicGlyph = ({
+  c = 'currentColor'
+}) => /*#__PURE__*/React.createElement("svg", {
+  width: "11",
+  height: "11",
+  viewBox: "0 0 16 16",
+  fill: "none"
+}, /*#__PURE__*/React.createElement("rect", {
+  x: "6",
+  y: "1.5",
+  width: "4",
+  height: "8",
+  rx: "2",
+  fill: c
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M4 7.5C4 9.7 5.8 11.5 8 11.5C10.2 11.5 12 9.7 12 7.5",
+  stroke: c,
+  strokeWidth: "1.3",
+  strokeLinecap: "round"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8 11.5V14M6 14h4",
+  stroke: c,
+  strokeWidth: "1.3",
+  strokeLinecap: "round"
+}));
+const CamGlyph = ({
+  c = 'currentColor'
+}) => /*#__PURE__*/React.createElement("svg", {
+  width: "11",
+  height: "11",
+  viewBox: "0 0 16 16",
+  fill: "none"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M2 5.5C2 4.7 2.7 4 3.5 4H5l.8-1.3A1 1 0 0 1 6.7 2.2h2.6a1 1 0 0 1 .9.5L11 4h1.5c.8 0 1.5.7 1.5 1.5v6c0 .8-.7 1.5-1.5 1.5h-9C2.7 13 2 12.3 2 11.5v-6Z",
+  stroke: c,
+  strokeWidth: "1.2",
+  fill: "none"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8.2",
+  r: "2.2",
+  stroke: c,
+  strokeWidth: "1.2",
+  fill: "none"
+}));
+const SOURCES = {
+  voice: {
+    Glyph: MicGlyph,
+    label: '음성'
+  },
+  photo: {
+    Glyph: CamGlyph,
+    label: '사진'
+  }
+};
+
 /**
- * A row in the Evidence Log: date, the user's evidence, Dash's domain read,
- * and the Impact Seed it earned. The core "오늘의 증거" artifact.
+ * A row in the Evidence Log: date, source (text/voice/photo), the user's
+ * evidence, Dash's domain read, and the Impact Seed it earned.
  */
 function EvidenceItem({
   date,
@@ -426,8 +482,12 @@ function EvidenceItem({
   domainColor = 'var(--domain-space)',
   domainLabel = null,
   seed = null,
+  source = 'text',
+  voiceLength = null,
+  photoSrc = null,
   style = {}
 }) {
+  const src = SOURCES[source];
   return /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
@@ -467,10 +527,17 @@ function EvidenceItem({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
-      alignItems: 'baseline',
+      alignItems: 'center',
       justifyContent: 'space-between',
       gap: 8,
-      marginBottom: 2
+      marginBottom: 3
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 7,
+      minWidth: 0
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -479,14 +546,59 @@ function EvidenceItem({
       letterSpacing: 'var(--tracking-wide)',
       color: 'var(--text-faint)'
     }
-  }, date), seed != null && /*#__PURE__*/React.createElement("span", {
+  }, date), src && /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4,
+      height: 17,
+      padding: '0 6px',
+      borderRadius: 'var(--radius-pill)',
+      background: 'var(--surface-sunken)',
+      color: 'var(--text-muted)'
+    }
+  }, /*#__PURE__*/React.createElement(src.Glyph, {
+    c: "var(--text-muted)"
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 9.5,
+      letterSpacing: '.04em'
+    }
+  }, source === 'voice' && voiceLength ? voiceLength : src.label))), seed != null && /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: 'var(--font-mono)',
       fontSize: 'var(--text-2xs)',
       color: 'var(--ochre-600)',
-      fontWeight: 'var(--weight-semibold)'
+      fontWeight: 'var(--weight-semibold)',
+      flexShrink: 0
     }
   }, "Seed ", seed)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10
+    }
+  }, source === 'photo' && /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 46,
+      height: 46,
+      flexShrink: 0,
+      borderRadius: 'var(--radius-sm)',
+      overflow: 'hidden',
+      background: photoSrc ? `center/cover no-repeat url(${photoSrc})` : `color-mix(in oklch, ${domainColor} 16%, var(--surface-sunken))`,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      border: '1px solid var(--line)'
+    }
+  }, !photoSrc && /*#__PURE__*/React.createElement(CamGlyph, {
+    c: domainColor
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 'var(--text-base)',
       fontWeight: 'var(--weight-medium)',
@@ -512,7 +624,7 @@ function EvidenceItem({
       color: 'var(--text-muted)',
       lineHeight: 'var(--leading-normal)'
     }
-  }, interpretation))));
+  }, interpretation))))));
 }
 Object.assign(__ds_scope, { EvidenceItem });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/dash/EvidenceItem.jsx", error: String((e && e.message) || e) }); }
@@ -756,6 +868,215 @@ function InterpretationCard({
 Object.assign(__ds_scope, { InterpretationCard });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/dash/InterpretationCard.jsx", error: String((e && e.message) || e) }); }
 
+// components/dash/PhotoViewer.jsx
+try { (() => {
+const CamGlyph = ({
+  c = 'currentColor',
+  s = 22
+}) => /*#__PURE__*/React.createElement("svg", {
+  width: s,
+  height: s,
+  viewBox: "0 0 16 16",
+  fill: "none"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M2 5.5C2 4.7 2.7 4 3.5 4H5l.8-1.3A1 1 0 0 1 6.7 2.2h2.6a1 1 0 0 1 .9.5L11 4h1.5c.8 0 1.5.7 1.5 1.5v6c0 .8-.7 1.5-1.5 1.5h-9C2.7 13 2 12.3 2 11.5v-6Z",
+  stroke: c,
+  strokeWidth: "1.2"
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "8",
+  cy: "8.2",
+  r: "2.2",
+  stroke: c,
+  strokeWidth: "1.2"
+}));
+
+/**
+ * Photo record — thumbnail that opens a fullscreen viewer with the vision
+ * caption, domain tag, and (optionally) what the AI detected.
+ */
+function PhotoViewer({
+  src = null,
+  caption = null,
+  domainColor = 'var(--domain-space)',
+  domainLabel = null,
+  detected = [],
+  size = 88,
+  radius = 'var(--radius-md)',
+  style = {}
+}) {
+  const [open, setOpen] = React.useState(false);
+  const placeholder = `color-mix(in oklch, ${domainColor} 18%, var(--surface-sunken))`;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: () => setOpen(true),
+    "aria-label": "\uC0AC\uC9C4 \uBCF4\uAE30",
+    style: {
+      position: 'relative',
+      width: size,
+      height: size,
+      flexShrink: 0,
+      padding: 0,
+      cursor: 'pointer',
+      border: '1px solid var(--line)',
+      borderRadius: radius,
+      overflow: 'hidden',
+      background: src ? `center/cover no-repeat url(${src})` : placeholder,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      ...style
+    }
+  }, !src && /*#__PURE__*/React.createElement(CamGlyph, {
+    c: domainColor,
+    s: 26
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      right: 5,
+      bottom: 5,
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 20,
+      height: 20,
+      borderRadius: '50%',
+      background: 'rgba(20,38,30,0.55)',
+      color: '#fff'
+    }
+  }, /*#__PURE__*/React.createElement(CamGlyph, {
+    c: "#fff",
+    s: 11
+  }))), open && /*#__PURE__*/React.createElement("div", {
+    onClick: () => setOpen(false),
+    style: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 120,
+      display: 'flex',
+      flexDirection: 'column',
+      background: 'rgba(15,26,22,0.86)',
+      backdropFilter: 'blur(3px)',
+      padding: 20,
+      animation: 'dashFade var(--dur-base) var(--ease-out)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: () => setOpen(false),
+    "aria-label": "\uB2EB\uAE30",
+    style: {
+      width: 40,
+      height: 40,
+      borderRadius: '50%',
+      border: 'none',
+      background: 'rgba(255,255,255,0.12)',
+      color: '#fff',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M4 4l8 8M12 4l-8 8",
+    stroke: "currentColor",
+    strokeWidth: "1.8",
+    strokeLinecap: "round"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    onClick: e => e.stopPropagation(),
+    style: {
+      maxWidth: '100%',
+      maxHeight: '100%',
+      aspectRatio: '4 / 5',
+      width: 320,
+      borderRadius: 'var(--radius-lg)',
+      overflow: 'hidden',
+      background: src ? `center/cover no-repeat url(${src})` : placeholder,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: 'var(--shadow-pop)'
+    }
+  }, !src && /*#__PURE__*/React.createElement(CamGlyph, {
+    c: domainColor,
+    s: 64
+  }))), /*#__PURE__*/React.createElement("div", {
+    onClick: e => e.stopPropagation(),
+    style: {
+      paddingTop: 16,
+      color: '#EFF5F0'
+    }
+  }, domainLabel && /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: '50%',
+      background: domainColor
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 'var(--weight-semibold)',
+      color: '#fff'
+    }
+  }, domainLabel)), caption && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 15,
+      lineHeight: 1.55,
+      color: '#EFF5F0',
+      marginBottom: detected.length ? 12 : 0
+    }
+  }, caption), detected.length > 0 && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 10,
+      letterSpacing: '.14em',
+      textTransform: 'uppercase',
+      color: 'var(--pine-300)',
+      marginBottom: 7
+    }
+  }, "Dash\uAC00 \uAC10\uC9C0\uD55C \uAC83"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 6
+    }
+  }, detected.map(d => /*#__PURE__*/React.createElement("span", {
+    key: d,
+    style: {
+      fontSize: 12,
+      padding: '4px 10px',
+      borderRadius: 'var(--radius-pill)',
+      background: 'rgba(255,255,255,0.10)',
+      color: '#EFF5F0'
+    }
+  }, d))))), /*#__PURE__*/React.createElement("style", null, `@keyframes dashFade { from { opacity: 0 } to { opacity: 1 } }`)));
+}
+Object.assign(__ds_scope, { PhotoViewer });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/dash/PhotoViewer.jsx", error: String((e && e.message) || e) }); }
+
 // components/dash/RecordReview.jsx
 try { (() => {
 const ALL_DOMAINS = ['body', 'space', 'relation', 'work', 'hobby', 'mind', 'admin', 'impact'];
@@ -773,6 +1094,8 @@ function RecordReview({
   axes = [],
   interpretation = null,
   confidence = 0.9,
+  source = 'text',
+  voiceLength = null,
   onConfirm,
   onChange,
   style = {}
@@ -821,21 +1144,89 @@ function RecordReview({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 8,
+      marginBottom: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
       fontFamily: 'var(--font-mono)',
       fontSize: 11,
       letterSpacing: '.14em',
       textTransform: 'uppercase',
-      color: 'var(--text-muted)',
-      marginBottom: 6
+      color: 'var(--text-muted)'
     }
-  }, lowConf ? '이 기록, 어떤 영역에 가까운가요?' : '이렇게 이해했어요'), raw && /*#__PURE__*/React.createElement("div", {
+  }, lowConf ? '이 기록, 어떤 영역에 가까운가요?' : '이렇게 이해했어요'), source && source !== 'text' && /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4,
+      height: 20,
+      padding: '0 8px',
+      borderRadius: 'var(--radius-pill)',
+      background: 'var(--ochre-100)',
+      color: 'var(--ochre-700)',
+      flexShrink: 0
+    }
+  }, source === 'voice' ? /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 16 16",
+    fill: "none"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "6",
+    y: "1.5",
+    width: "4",
+    height: "8",
+    rx: "2",
+    fill: "currentColor"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M4 7.5C4 9.7 5.8 11.5 8 11.5C10.2 11.5 12 9.7 12 7.5",
+    stroke: "currentColor",
+    strokeWidth: "1.3",
+    strokeLinecap: "round"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M8 11.5V14M6 14h4",
+    stroke: "currentColor",
+    strokeWidth: "1.3",
+    strokeLinecap: "round"
+  })) : /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 16 16",
+    fill: "none"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M2 5.5C2 4.7 2.7 4 3.5 4H5l.8-1.3A1 1 0 0 1 6.7 2.2h2.6a1 1 0 0 1 .9.5L11 4h1.5c.8 0 1.5.7 1.5 1.5v6c0 .8-.7 1.5-1.5 1.5h-9C2.7 13 2 12.3 2 11.5v-6Z",
+    stroke: "currentColor",
+    strokeWidth: "1.2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "8",
+    cy: "8.2",
+    r: "2.2",
+    stroke: "currentColor",
+    strokeWidth: "1.2"
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 9.5,
+      letterSpacing: '.06em'
+    }
+  }, source === 'voice' ? voiceLength || '음성' : '사진'))), raw && /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 15,
       fontWeight: 'var(--weight-medium)',
       color: 'var(--text-strong)',
       lineHeight: 1.45
     }
-  }, raw)), /*#__PURE__*/React.createElement("div", {
+  }, raw), source && source !== 'text' && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11.5,
+      color: 'var(--text-faint)',
+      marginTop: 4
+    }
+  }, source === 'voice' ? 'Dash가 음성을 이해해 적었어요' : 'Dash가 사진을 보고 적었어요', " \xB7 \uC6D0\uBCF8\uC740 \uADF8\uB300\uB85C \uB0A8\uC544\uC788\uC5B4\uC694")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 16,
       display: 'flex',
@@ -1305,6 +1696,172 @@ function SeedBadge({
 }
 Object.assign(__ds_scope, { SeedBadge });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/dash/SeedBadge.jsx", error: String((e && e.message) || e) }); }
+
+// components/dash/VoicePlayer.jsx
+try { (() => {
+/* Deterministic pseudo-waveform bars from a seed string. */
+function bars(seed = 'dash', n = 40) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = h * 31 + seed.charCodeAt(i) & 0xffff;
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    h = h * 1103515245 + 12345 & 0x7fffffff;
+    out.push(0.28 + (h >> 8) % 100 / 100 * 0.72);
+  }
+  return out;
+}
+
+/**
+ * Voice memo player — waveform + play/pause + elapsed/total time.
+ * Playback is simulated (design fidelity); wire to real audio in production.
+ */
+function VoicePlayer({
+  seed = 'dash',
+  duration = 22,
+  transcript = null,
+  accent = 'var(--ochre-500)',
+  onToggle,
+  style = {}
+}) {
+  const [playing, setPlaying] = React.useState(false);
+  const [t, setT] = React.useState(0);
+  const wave = React.useMemo(() => bars(seed, 44), [seed]);
+  const timer = React.useRef(null);
+  React.useEffect(() => {
+    if (playing) {
+      timer.current = setInterval(() => {
+        setT(prev => {
+          if (prev >= duration) {
+            setPlaying(false);
+            return 0;
+          }
+          return prev + 0.1;
+        });
+      }, 100);
+    }
+    return () => clearInterval(timer.current);
+  }, [playing, duration]);
+  const toggle = () => {
+    setPlaying(p => !p);
+    onToggle && onToggle(!playing);
+  };
+  const progress = Math.min(1, t / duration);
+  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      padding: '10px 12px',
+      background: 'var(--surface-sunken)',
+      border: '1px solid var(--line)',
+      borderRadius: 'var(--radius-md)'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: toggle,
+    "aria-label": playing ? '일시정지' : '재생',
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 36,
+      height: 36,
+      flexShrink: 0,
+      borderRadius: '50%',
+      border: 'none',
+      cursor: 'pointer',
+      background: accent,
+      color: '#fff'
+    }
+  }, playing ? /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 14 14"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "2.5",
+    y: "2",
+    width: "3",
+    height: "10",
+    rx: "1",
+    fill: "currentColor"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "8.5",
+    y: "2",
+    width: "3",
+    height: "10",
+    rx: "1",
+    fill: "currentColor"
+  })) : /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 14 14"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3.5 2.2v9.6a.6.6 0 0 0 .9.5l7.2-4.8a.6.6 0 0 0 0-1L4.4 1.7a.6.6 0 0 0-.9.5Z",
+    fill: "currentColor"
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 2,
+      height: 30
+    }
+  }, wave.map((v, i) => {
+    const active = i / wave.length <= progress;
+    return /*#__PURE__*/React.createElement("span", {
+      key: i,
+      style: {
+        flex: 1,
+        height: `${v * 100}%`,
+        minWidth: 2,
+        borderRadius: 2,
+        background: active ? accent : 'var(--ink-200)',
+        transition: 'background 80ms linear'
+      }
+    });
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 11,
+      color: 'var(--text-muted)',
+      fontFeatureSettings: "'tnum' 1",
+      flexShrink: 0,
+      width: 32,
+      textAlign: 'right'
+    }
+  }, fmt(playing || t > 0 ? t : duration))), transcript && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 7,
+      padding: '0 2px'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 10,
+      letterSpacing: '.06em',
+      color: 'var(--text-faint)',
+      flexShrink: 0,
+      marginTop: 2
+    }
+  }, "STT"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      color: 'var(--text-muted)',
+      lineHeight: 1.5
+    }
+  }, transcript)));
+}
+Object.assign(__ds_scope, { VoicePlayer });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/dash/VoicePlayer.jsx", error: String((e && e.message) || e) }); }
 
 // components/dash/WeekStrip.jsx
 try { (() => {
@@ -2870,9 +3427,11 @@ __ds_ns.AXES = __ds_scope.AXES;
 __ds_ns.FlourishBalance = __ds_scope.FlourishBalance;
 __ds_ns.GroveMeter = __ds_scope.GroveMeter;
 __ds_ns.InterpretationCard = __ds_scope.InterpretationCard;
+__ds_ns.PhotoViewer = __ds_scope.PhotoViewer;
 __ds_ns.RecordReview = __ds_scope.RecordReview;
 __ds_ns.RingGauge = __ds_scope.RingGauge;
 __ds_ns.SeedBadge = __ds_scope.SeedBadge;
+__ds_ns.VoicePlayer = __ds_scope.VoicePlayer;
 __ds_ns.WeekStrip = __ds_scope.WeekStrip;
 __ds_ns.Avatar = __ds_scope.Avatar;
 __ds_ns.Badge = __ds_scope.Badge;

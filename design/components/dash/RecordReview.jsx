@@ -17,6 +17,8 @@ export function RecordReview({
   axes = [],
   interpretation = null,
   confidence = 0.9,
+  source = 'text',
+  voiceLength = null,
   onConfirm,
   onChange,
   style = {},
@@ -53,10 +55,23 @@ export function RecordReview({
     }}>
       {/* header */}
       <div style={{ padding: '14px 16px 12px', borderBottom: '1px solid var(--line)' }}>
-        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 6 }}>
-          {lowConf ? '이 기록, 어떤 영역에 가까운가요?' : '이렇게 이해했어요'}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 6 }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+            {lowConf ? '이 기록, 어떤 영역에 가까운가요?' : '이렇게 이해했어요'}
+          </span>
+          {source && source !== 'text' && (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, height: 20, padding: '0 8px', borderRadius: 'var(--radius-pill)', background: 'var(--ochre-100)', color: 'var(--ochre-700)', flexShrink: 0 }}>
+              {source === 'voice'
+                ? <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><rect x="6" y="1.5" width="4" height="8" rx="2" fill="currentColor" /><path d="M4 7.5C4 9.7 5.8 11.5 8 11.5C10.2 11.5 12 9.7 12 7.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /><path d="M8 11.5V14M6 14h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>
+                : <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M2 5.5C2 4.7 2.7 4 3.5 4H5l.8-1.3A1 1 0 0 1 6.7 2.2h2.6a1 1 0 0 1 .9.5L11 4h1.5c.8 0 1.5.7 1.5 1.5v6c0 .8-.7 1.5-1.5 1.5h-9C2.7 13 2 12.3 2 11.5v-6Z" stroke="currentColor" strokeWidth="1.2" /><circle cx="8" cy="8.2" r="2.2" stroke="currentColor" strokeWidth="1.2" /></svg>}
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9.5, letterSpacing: '.06em' }}>{source === 'voice' ? (voiceLength || '음성') : '사진'}</span>
+            </span>
+          )}
         </div>
         {raw && <div style={{ fontSize: 15, fontWeight: 'var(--weight-medium)', color: 'var(--text-strong)', lineHeight: 1.45 }}>{raw}</div>}
+        {source && source !== 'text' && (
+          <div style={{ fontSize: 11.5, color: 'var(--text-faint)', marginTop: 4 }}>{source === 'voice' ? 'Dash가 음성을 이해해 적었어요' : 'Dash가 사진을 보고 적었어요'} · 원본은 그대로 남아있어요</div>
+        )}
       </div>
 
       <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 14 }}>

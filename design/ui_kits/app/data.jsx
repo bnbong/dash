@@ -44,9 +44,9 @@ const SUGGESTIONS = [
 
 // Today's logged actions (only today) — primary + optional secondary + axes
 const TODAY_LOG = [
-  { time: '08:20', text: '아침 챙겨 먹음', domain: 'body', secondary: [], axes: ['enjoyment'] },
-  { time: '13:05', text: '점심 후 책상 정리', domain: 'space', secondary: ['admin'], axes: [] },
-  { time: '21:40', text: '내일 회의 자료 검토', domain: 'work', secondary: [], axes: ['growth'] },
+  { time: '08:20', text: '아침 챙겨 먹음', domain: 'body', secondary: [], axes: ['enjoyment'], source: 'photo' },
+  { time: '13:05', text: '점심 후 책상 정리', domain: 'space', secondary: ['admin'], axes: [], source: 'text' },
+  { time: '21:40', text: '내일 회의 자료 검토', domain: 'work', secondary: [], axes: ['growth'], source: 'voice', voiceLength: '0:18' },
 ];
 
 // Tier-1 on-device instant estimate (keyword heuristic) — see classification spec.
@@ -103,11 +103,11 @@ const WEEK_COMPARE = [
 const EVIDENCE_MONTHS = [
   {
     month: '2026년 7월', count: 16, seed: 16, items: [
-      { date: '11일', evidence: '병원 예약', domain: 'body', interpretation: '몸 관리', seed: 1 },
-      { date: '10일', evidence: '새 김치볶음밥 레시피 시도', domain: 'hobby', interpretation: '생활 역량 확장', seed: 1 },
-      { date: '08일', evidence: '친구에게 먼저 연락', domain: 'relation', interpretation: '관계 유지', seed: 1 },
-      { date: '05일', evidence: '밴드 합주 2시간', domain: 'hobby', interpretation: '취미 성장과 커뮤니티 유지', seed: 1 },
-      { date: '03일', evidence: '빨래 2번 돌림', domain: 'space', interpretation: '생활 기반 회복', seed: 1 },
+      { date: '11일', evidence: '병원 예약', domain: 'body', interpretation: '몸 관리', seed: 1, source: 'text' },
+      { date: '10일', evidence: '새 김치볶음밥 레시피 시도', domain: 'hobby', interpretation: '생활 역량 확장', seed: 1, source: 'photo', caption: '직접 만든 한 끼 — 새 레시피', detected: ['음식', '접시', '요리', '주방'] },
+      { date: '08일', evidence: '친구에게 먼저 연락', domain: 'relation', interpretation: '관계 유지', seed: 1, source: 'text' },
+      { date: '05일', evidence: '밴드 합주 2시간', domain: 'hobby', interpretation: '취미 성장과 커뮤니티 유지', seed: 1, source: 'voice', voiceLength: '0:31', transcript: '오늘 합주를 두 시간 했다. 오랜만에 사람들과 맞추니 마음이 풀렸다.' },
+      { date: '03일', evidence: '빨래 2번 돌림', domain: 'space', interpretation: '생활 기반 회복', seed: 1, source: 'text' },
       { date: '01일', evidence: '밀린 공과금 납부', domain: 'admin', interpretation: '생활 마찰 감소', seed: 1 },
     ],
   },

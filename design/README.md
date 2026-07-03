@@ -141,7 +141,7 @@ Dash standardizes on **[Lucide](https://lucide.dev)** — calm, even-stroke (≈
 - `display/` — Card, Badge, Tag, Avatar, Stat, ProgressBar, Divider
 - `feedback/` — Dialog, Toast, EmptyState
 - `navigation/` — AppHeader, SectionTabs, TabBar
-- `dash/` — **DomainCard, SeedBadge, EvidenceItem, GroveMeter, InterpretationCard, RingGauge, ActivityChart, WeekStrip, FlourishBalance, RecordReview** + the `DOMAINS` and `AXES` registries (product-specific, brand-defining)
+- `dash/` — **DomainCard, SeedBadge, EvidenceItem, GroveMeter, InterpretationCard, RingGauge, ActivityChart, WeekStrip, FlourishBalance, RecordReview, VoicePlayer, PhotoViewer** + the `DOMAINS` and `AXES` registries (product-specific, brand-defining)
 
 **UI kits** — `ui_kits/`
 - `app/` — interactive recreation of the Dash mobile app: Today, Life Dashboard, Evidence Log, Dash Grove (+ certificate, Impact Map, monthly report deep-dives), Weekly Report, Profile.

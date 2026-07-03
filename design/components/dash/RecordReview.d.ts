@@ -20,6 +20,10 @@ export interface RecordReviewProps {
   interpretation?: string;
   /** 0..1 — below 0.55 flips copy to ask the user first. */
   confidence?: number;
+  /** How the record was captured — shows a source badge + provenance note. */
+  source?: 'text' | 'voice' | 'photo';
+  /** For voice records, the clip length, e.g. "0:22". */
+  voiceLength?: string;
   onConfirm?: (result: RecordReviewChange) => void;
   onChange?: (result: RecordReviewChange) => void;
   style?: React.CSSProperties;

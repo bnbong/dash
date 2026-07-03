@@ -7,6 +7,12 @@ export interface EvidenceItemProps {
   domainColor?: string;
   domainLabel?: string;
   seed?: React.ReactNode;
+  /** How the record was captured. Adds a source badge (and photo thumbnail). */
+  source?: 'text' | 'voice' | 'photo';
+  /** For voice records, the clip length, e.g. "0:24". */
+  voiceLength?: string;
+  /** Optional photo thumbnail URL; a domain-tinted placeholder is shown if absent. */
+  photoSrc?: string;
   style?: React.CSSProperties;
 }
 

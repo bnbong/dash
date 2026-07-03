@@ -9,17 +9,23 @@ function TodayScreen({ seedTotal, onRecord, go }) {
   const [pending, setPending] = React.useState(null); // { raw, time, guess }
 
   const save = () => {
-    if (!text.trim()) return;
     const now = new Date();
     const hh = String(now.getHours()).padStart(2, '0');
     const mm = String(now.getMinutes()).padStart(2, '0');
-    setPending({ raw: text.trim(), time: `${hh}:${mm}`, guess: window.classifyGuess(text.trim()) });
+    if (mode === 'line') {
+      if (!text.trim()) return;
+      setPending({ raw: text.trim(), time: `${hh}:${mm}`, source: 'text', guess: window.classifyGuess(text.trim()) });
+    } else if (mode === 'voice') {
+      setPending({ raw: '산책하며 남긴 음성 메모', time: `${hh}:${mm}`, source: 'voice', voiceLength: '0:22', guess: window.classifyGuess('산책 휴식') });
+    } else {
+      setPending({ raw: '새 레시피로 저녁 준비', time: `${hh}:${mm}`, source: 'photo', guess: window.classifyGuess('요리 레시피') });
+    }
     setText('');
     setJustSaved(false);
   };
 
   const commit = (result) => {
-    setLog([...log, { time: pending.time, text: pending.raw, domain: result.primary, secondary: result.secondary || [], axes: result.axes || [] }]);
+    setLog([...log, { time: pending.time, text: pending.raw, domain: result.primary, secondary: result.secondary || [], axes: result.axes || [], source: pending.source, voiceLength: pending.voiceLength }]);
     onRecord(pending.raw);
     setPending(null);
     setJustSaved(true);
@@ -62,7 +68,7 @@ function TodayScreen({ seedTotal, onRecord, go }) {
             <span style={{ fontSize: 14, lineHeight: 1.5 }}>정리한 공간, 만든 음식… 사진 한 장이면 충분해요.</span>
           </div>
         )}
-        <Button variant="accent" fullWidth iconLeft={<Icon name="plus" size={18} />} onClick={save} disabled={mode === 'line' && !text.trim()}>오늘 기록하기</Button>
+        <Button variant="accent" fullWidth iconLeft={<Icon name={mode === 'voice' ? 'mic' : mode === 'photo' ? 'camera' : 'plus'} size={18} />} onClick={save} disabled={mode === 'line' && !text.trim()}>{mode === 'voice' ? '음성으로 기록' : mode === 'photo' ? '사진으로 기록' : '오늘 기록하기'}</Button>
       </div>
 
       {/* Classification review (right after recording) */}
@@ -73,6 +79,8 @@ function TodayScreen({ seedTotal, onRecord, go }) {
           secondary={pending.guess.secondary}
           axes={pending.guess.axes}
           confidence={pending.guess.confidence}
+          source={pending.source}
+          voiceLength={pending.voiceLength}
           onConfirm={commit}
         />
       )}
@@ -105,7 +113,13 @@ function TodayScreen({ seedTotal, onRecord, go }) {
                   <span style={{ width: 8, height: 8, borderRadius: '50%', background: `var(--domain-${l.domain})` }} />
                   {(l.secondary || []).map((s) => <span key={s} style={{ width: 6, height: 6, borderRadius: '50%', background: `var(--domain-${s})`, opacity: 0.55, alignSelf: 'center' }} />)}
                 </span>
-                <span style={{ flex: 1, fontSize: 14.5, color: 'var(--text-body)', minWidth: 0 }}>{l.text}</span>
+                <span style={{ flex: 1, fontSize: 14.5, color: 'var(--text-body)', minWidth: 0, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {l.source && l.source !== 'text' && (
+                    <Icon name={l.source === 'voice' ? 'mic' : 'camera'} size={13} color="var(--text-faint)" style={{ flexShrink: 0 }} />
+                  )}
+                  <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{l.text}</span>
+                  {l.source === 'voice' && l.voiceLength && <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-faint)', flexShrink: 0 }}>{l.voiceLength}</span>}
+                </span>
                 <span style={{ fontSize: 11, fontWeight: 600, color: `var(--domain-${l.domain})`, flexShrink: 0 }}>{D.DOMAINS[l.domain].en}</span>
               </div>
             ))}
